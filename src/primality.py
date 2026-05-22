@@ -1,5 +1,5 @@
 import random
-
+from math_utils import mod_exp
 
 def is_prime(n: int, k: int = 10) -> bool:
     """
@@ -32,14 +32,14 @@ def is_prime(n: int, k: int = 10) -> bool:
     # Perform Miller-Rabin test k times
     for _ in range(k):
         a = random.randrange(2, n - 1)
-        x = pow(a, d, n)
+        x = mod_exp(a, d, n)
 
         # If x is 1 or n - 1, continue to next round
         if x == 1 or x == n - 1:
             continue
 
         for _ in range(r - 1):
-            x = pow(x, 2, n)
+            x = mod_exp(x, 2, n)
 
             if x == n - 1:
                 break

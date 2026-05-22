@@ -7,7 +7,7 @@ import math
 import matplotlib.pyplot as plt
 
 from primality import generate_prime
-
+from math_utils import mod_exp
 
 def pollard_rho(n):
     """
@@ -32,9 +32,9 @@ def pollard_rho(n):
         while d == 1:
 
             # f(x) = x^2 + c mod n
-            x = (pow(x, 2, n) + c) % n
-            y = (pow(y, 2, n) + c) % n
-            y = (pow(y, 2, n) + c) % n
+            x = (mod_exp(x, 2, n) + c) % n
+            y = (mod_exp(y, 2, n) + c) % n
+            y = (mod_exp(y, 2, n) + c) % n
 
             d = math.gcd(abs(x - y), n)
 
