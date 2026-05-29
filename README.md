@@ -164,16 +164,6 @@ Hello RSA
 
 ---
 
-# Future Improvements
-
-- RSA-OAEP implementation
-- Digital signatures
-- GUI version
-- AES hybrid encryption
-- Post-quantum cryptography research
-
----
-
 # Author
 
 Boston Karymshakov
